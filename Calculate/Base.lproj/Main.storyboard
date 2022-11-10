@@ -1,24 +1,484 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Calculate-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="Calculate" customModule="Calculate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2nP-CF-ptg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                                <color key="backgroundColor" name="OutlineLabelBackground"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="Un8-6Y-wZT"/>
+                                    <constraint firstAttribute="height" constant="300" id="ZZg-to-4yx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="46"/>
+                                <color key="textColor" name="OutlineLabelTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="01u-fA-ebl">
+                                <rect key="frame" x="31.666666666666657" y="411" width="312" height="312"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tHx-E4-ivM">
+                                        <rect key="frame" x="0.0" y="0.0" width="312" height="72"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0c-wM-c0n" customClass="RoundedButton" customModule="Calculate" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="72" height="72"/>
+                                                <color key="backgroundColor" name="ButtonDigitalBacgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="72" id="cJP-qa-j0x"/>
+                                                    <constraint firstAttribute="height" constant="72" id="p6d-QW-vdH"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="7">
+                                                    <color key="titleColor" name="ButtonDigitalTextColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedButton">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="digitalTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bTA-wD-VXc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aCG-qR-aQJ" customClass="RoundedButton" customModule="Calculate" customModuleProvider="target">
+                                                <rect key="frame" x="80" y="0.0" width="72" height="72"/>
+                                                <color key="backgroundColor" name="ButtonDigitalBacgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="72" id="aZU-pv-pPR"/>
+                                                    <constraint firstAttribute="height" constant="72" id="yw6-4Q-C1U"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="8">
+                                                    <color key="titleColor" name="ButtonDigitalTextColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedButton">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="digitalTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="std-ip-hT9"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pG3-ac-chg" customClass="RoundedButton" customModule="Calculate" customModuleProvider="target">
+                                                <rect key="frame" x="160" y="0.0" width="72" height="72"/>
+                                                <color key="backgroundColor" name="ButtonDigitalBacgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="72" id="7a3-YV-Q9f"/>
+                                                    <constraint firstAttribute="height" constant="72" id="hFP-D9-Mk3"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="9">
+                                                    <color key="titleColor" name="ButtonDigitalTextColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedButton">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="digitalTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ERo-vu-yRX"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S5j-us-Rrf" customClass="RoundedButton" customModule="Calculate" customModuleProvider="target">
+                                                <rect key="frame" x="240" y="0.0" width="72" height="72"/>
+                                                <color key="backgroundColor" name="ButtonOperandBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="72" id="GLX-uj-yV7"/>
+                                                    <constraint firstAttribute="height" constant="72" id="wLH-eX-5gp"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="*">
+                                                    <color key="titleColor" name="ButtonDigitalTextColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedButton">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="operandAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fpm-Gb-3ws"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tyt-Pd-2TM">
+                                        <rect key="frame" x="0.0" y="80" width="312" height="72"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yKB-92-Mgu" customClass="RoundedButton" customModule="Calculate" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="72" height="72"/>
+                                                <color key="backgroundColor" name="ButtonDigitalBacgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="72" id="9bV-rm-zF9"/>
+                                                    <constraint firstAttribute="height" constant="72" id="miQ-cu-qoa"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="4">
+                                                    <color key="titleColor" name="ButtonDigitalTextColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedButton">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="digitalTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jc6-hd-ARX"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JEm-uT-mtH" customClass="RoundedButton" customModule="Calculate" customModuleProvider="target">
+                                                <rect key="frame" x="80" y="0.0" width="72" height="72"/>
+                                                <color key="backgroundColor" name="ButtonDigitalBacgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="72" id="RBp-Hr-262"/>
+                                                    <constraint firstAttribute="height" constant="72" id="bk7-VG-dbP"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="5">
+                                                    <color key="titleColor" name="ButtonDigitalTextColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedButton">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="digitalTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S89-e8-MBv"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SzP-Ba-MQz" customClass="RoundedButton" customModule="Calculate" customModuleProvider="target">
+                                                <rect key="frame" x="160" y="0.0" width="72" height="72"/>
+                                                <color key="backgroundColor" name="ButtonDigitalBacgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="72" id="Ev7-fp-2Iu"/>
+                                                    <constraint firstAttribute="height" constant="72" id="fSO-50-4ko"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="6">
+                                                    <color key="titleColor" name="ButtonDigitalTextColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedButton">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="digitalTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XMg-PU-OSJ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0tg-EB-uSk" customClass="RoundedButton" customModule="Calculate" customModuleProvider="target">
+                                                <rect key="frame" x="240" y="0.0" width="72" height="72"/>
+                                                <color key="backgroundColor" name="ButtonOperandBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="72" id="IB3-ag-l3z"/>
+                                                    <constraint firstAttribute="height" constant="72" id="cw9-PJ-cYe"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="/">
+                                                    <color key="titleColor" name="ButtonDigitalTextColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedButton">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="operandAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5TZ-v2-LeQ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FVX-ui-8CN">
+                                        <rect key="frame" x="0.0" y="160" width="312" height="72"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acU-gg-ocZ" customClass="RoundedButton" customModule="Calculate" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="72" height="72"/>
+                                                <color key="backgroundColor" name="ButtonDigitalBacgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="72" id="2p7-AV-r7P"/>
+                                                    <constraint firstAttribute="width" constant="72" id="NuH-nR-X0G"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="1">
+                                                    <color key="titleColor" name="ButtonDigitalTextColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedButton">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="digitalTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="22x-sy-NV4"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ux-J7-UlY" customClass="RoundedButton" customModule="Calculate" customModuleProvider="target">
+                                                <rect key="frame" x="80" y="0.0" width="72" height="72"/>
+                                                <color key="backgroundColor" name="ButtonDigitalBacgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="72" id="SzX-aT-dhJ"/>
+                                                    <constraint firstAttribute="width" constant="72" id="z16-E8-eHC"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="2">
+                                                    <color key="titleColor" name="ButtonDigitalTextColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedButton">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="digitalTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vxI-rp-Ykc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2LR-mc-V3c" customClass="RoundedButton" customModule="Calculate" customModuleProvider="target">
+                                                <rect key="frame" x="160" y="0.0" width="72" height="72"/>
+                                                <color key="backgroundColor" name="ButtonDigitalBacgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="72" id="AvG-Ev-gtN"/>
+                                                    <constraint firstAttribute="width" constant="72" id="gCl-KZ-0d9"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="3">
+                                                    <color key="titleColor" name="ButtonDigitalTextColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedButton">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="digitalTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oBl-eT-Mcc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JVz-OO-ocD" customClass="RoundedButton" customModule="Calculate" customModuleProvider="target">
+                                                <rect key="frame" x="240" y="0.0" width="72" height="72"/>
+                                                <color key="backgroundColor" name="ButtonOperandBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="72" id="gIn-Pf-MJx"/>
+                                                    <constraint firstAttribute="width" constant="72" id="j6r-ib-5O0"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="-">
+                                                    <color key="titleColor" name="ButtonDigitalTextColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedButton">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="operandAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tvx-ia-3eA"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RJT-Cm-ndA">
+                                        <rect key="frame" x="0.0" y="240" width="312" height="72"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9R-LE-gQc" customClass="RoundedButton" customModule="Calculate" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="72" height="72"/>
+                                                <color key="backgroundColor" name="ButtonACBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="72" id="aOd-NA-98M"/>
+                                                    <constraint firstAttribute="width" constant="72" id="u4N-Rr-qf3"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="AC">
+                                                    <color key="titleColor" name="ButtonDigitalTextColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedButton">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="clearCalculateAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q0F-Ze-dj7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y91-32-6qg" customClass="RoundedButton" customModule="Calculate" customModuleProvider="target">
+                                                <rect key="frame" x="80" y="0.0" width="72" height="72"/>
+                                                <color key="backgroundColor" name="ButtonDigitalBacgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="72" id="W2I-SP-jZ0"/>
+                                                    <constraint firstAttribute="width" constant="72" id="d9l-TT-Xox"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="0">
+                                                    <color key="titleColor" name="ButtonDigitalTextColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedButton">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="digitalTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tgl-km-x23"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEx-dY-orI" customClass="RoundedButton" customModule="Calculate" customModuleProvider="target">
+                                                <rect key="frame" x="160" y="0.0" width="72" height="72"/>
+                                                <color key="backgroundColor" name="ButtonOperandBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="72" id="U0d-gM-l8b"/>
+                                                    <constraint firstAttribute="width" constant="72" id="pQW-PQ-Vda"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="=">
+                                                    <color key="titleColor" name="ButtonDigitalTextColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedButton">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="resultAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qT7-B3-7dz"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NeC-Fx-5La" customClass="RoundedButton" customModule="Calculate" customModuleProvider="target">
+                                                <rect key="frame" x="240" y="0.0" width="72" height="72"/>
+                                                <color key="backgroundColor" name="ButtonOperandBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="72" id="LZr-v7-Tom"/>
+                                                    <constraint firstAttribute="width" constant="72" id="gb3-a5-ce7"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="+">
+                                                    <color key="titleColor" name="ButtonDigitalTextColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedButton">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="operandAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sbW-iZ-09D"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" name="ViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2nP-CF-ptg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5t3-Xc-SeC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2nP-CF-ptg" secondAttribute="trailing" id="OBU-yw-Aoe"/>
+                            <constraint firstItem="01u-fA-ebl" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="154.5" id="Pzj-ed-Gpe"/>
+                            <constraint firstItem="2nP-CF-ptg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="c4y-XW-vaf"/>
+                            <constraint firstItem="01u-fA-ebl" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="e4j-hv-gqv"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="outlineLabel" destination="2nP-CF-ptg" id="39h-8a-qba"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-13.6" y="3.6945812807881775"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="0tg-EB-uSk">
+            <size key="intrinsicContentSize" width="30" height="51"/>
+        </designable>
+        <designable name="2LR-mc-V3c">
+            <size key="intrinsicContentSize" width="30" height="51"/>
+        </designable>
+        <designable name="5Ux-J7-UlY">
+            <size key="intrinsicContentSize" width="30" height="51"/>
+        </designable>
+        <designable name="A9R-LE-gQc">
+            <size key="intrinsicContentSize" width="43" height="51"/>
+        </designable>
+        <designable name="JEm-uT-mtH">
+            <size key="intrinsicContentSize" width="30" height="51"/>
+        </designable>
+        <designable name="JVz-OO-ocD">
+            <size key="intrinsicContentSize" width="30" height="51"/>
+        </designable>
+        <designable name="NeC-Fx-5La">
+            <size key="intrinsicContentSize" width="30" height="51"/>
+        </designable>
+        <designable name="S5j-us-Rrf">
+            <size key="intrinsicContentSize" width="30" height="51"/>
+        </designable>
+        <designable name="SzP-Ba-MQz">
+            <size key="intrinsicContentSize" width="30" height="51"/>
+        </designable>
+        <designable name="Y91-32-6qg">
+            <size key="intrinsicContentSize" width="30" height="51"/>
+        </designable>
+        <designable name="aCG-qR-aQJ">
+            <size key="intrinsicContentSize" width="30" height="51"/>
+        </designable>
+        <designable name="acU-gg-ocZ">
+            <size key="intrinsicContentSize" width="30" height="51"/>
+        </designable>
+        <designable name="dEx-dY-orI">
+            <size key="intrinsicContentSize" width="30" height="51"/>
+        </designable>
+        <designable name="pG3-ac-chg">
+            <size key="intrinsicContentSize" width="30" height="51"/>
+        </designable>
+        <designable name="q0c-wM-c0n">
+            <size key="intrinsicContentSize" width="30" height="51"/>
+        </designable>
+        <designable name="yKB-92-Mgu">
+            <size key="intrinsicContentSize" width="30" height="51"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="ButtonACBackgroundColor">
+            <color red="0.84700000286102295" green="0.41200000047683716" blue="0.36899998784065247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ButtonDigitalBacgroundColor">
+            <color red="0.13699999451637268" green="0.13300000131130219" blue="0.18000000715255737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ButtonDigitalTextColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ButtonOperandBackgroundColor">
+            <color red="0.90200001001358032" green="0.65100002288818359" blue="0.3449999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="OutlineLabelBackground">
+            <color red="0.18000000715255737" green="0.39599999785423279" blue="0.43500000238418579" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="OutlineLabelTextColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ViewBackgroundColor">
+            <color red="0.91399997472763062" green="0.89399999380111694" blue="0.84299999475479126" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
